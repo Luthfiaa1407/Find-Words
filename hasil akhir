@@ -126,9 +126,9 @@ int main() {
     cin >> word;
 
     if (findWord(matrix, word)) {
-      cout << word << "' Ada." << endl;
+      cout << word << " Ada." << endl;
     } else {
-      cout << word << "' Tidak ada." << endl;
+      cout << word << " Tidak ada." << endl;
     }
   }
     return 0;
