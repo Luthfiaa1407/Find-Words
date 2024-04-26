@@ -117,18 +117,18 @@ int main() {
     };
     
 	int num_words;
-  	cout << "Masukkan jumlah kata yang ingin dicari: ";
+  	cout << "Kata yang ingin dicari: ";
   	cin >> num_words;
 
   	for (int i = 0; i < num_words; ++i) {
     string word;
-    cout << "Masukkan kata ke-" << i + 1 << ": ";
+    cout << "kata ke-" << i + 1 << ": ";
     cin >> word;
 
     if (findWord(matrix, word)) {
-      cout << word << "' ada." << endl;
+      cout << word << "' Ada." << endl;
     } else {
-      cout << word << "' tidak ada." << endl;
+      cout << word << "' Tidak ada." << endl;
     }
   }
     return 0;
