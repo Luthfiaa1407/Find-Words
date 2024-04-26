@@ -1,2 +1,37 @@
-#include <iostream>
+// Fungsi untuk mencari kata secara diagonal (kiri atas ke kanan bawah)
+bool findDiagonalLR(const vector<vector<char>>& matrix, string word, int row, int col) {
+  int word_len = word.length();
+  for (int i = 0; i < matrix.size() - word_len + 1; ++i) {
+    if (matrix[i][i] != word[0]) continue;
 
+    bool found = true;
+    for (int j = 1; j < word_len; ++j) {
+      if (matrix[i + j][i + j] != word[j]) {
+        found = false;
+        break;
+      }
+    }
+
+    if (found) return true;
+  }
+  return false;
+}
+
+// Fungsi untuk mencari kata secara diagonal (kanan atas ke kiri bawah)
+bool findDiagonalRL(const vector<vector<char>>& matrix, string word, int row, int col) {
+  int word_len = word.length();
+  for (int i = 0; i < matrix.size() - word_len + 1; ++i) {
+    if (matrix[i][matrix[0].size() - 1 - i] != word[0]) continue;
+
+    bool found = true;
+    for (int j = 1; j < word_len; ++j) {
+      if (matrix[i + j][matrix[0].size() - 1 - i - j] != word[j]) {
+        found = false;
+        break;
+      }
+    }
+
+    if (found) return true;
+  }
+  return false;
+}
