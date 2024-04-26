@@ -1,17 +1,12 @@
-bool findVertical(const vector<vector<char>>& matrix, string word, int col) {
-    int word_len = word.length();
-    int rows = matrix.size();
-
-    for (int start_row = 0; start_row <= rows - word_len; ++start_row) {
-        bool found = true;
-        for (int i = 0; i < word_len; ++i) {
-            if (matrix[start_row + i][col] != word[i]) {
-                found = false;
-                break;
+ for (int i = 0; i <= rows - len; ++i) {
+        for (int j = 0; j <= cols - len; ++j) {
+            bool found = true;
+            for (int k = 0; k < len; ++k) {
+                if (matrix[i + k][j + k] != word[k]) {
+                    found = false;
+                    break;
+                }
             }
+            if (found) return true;
         }
-        if (found) return true;
     }
-
-    return false;
-}
